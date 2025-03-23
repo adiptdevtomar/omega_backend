@@ -32,14 +32,14 @@ async def lifespan(app: FastAPI):
     collection.create_index("expires_at", expireAfterSeconds=0)
 
     # Load the advanced emotion detection pipeline
-    logger.info("Loading advanced emotion detection pipeline...")
-    app.state.emotion_pipeline = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
-    logger.info("Advanced emotion detection pipeline loaded successfully.")
+    # logger.info("Loading advanced emotion detection pipeline...")
+    # app.state.emotion_pipeline = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
+    # logger.info("Advanced emotion detection pipeline loaded successfully.")
 
     # Load the question-answering pipeline
-    logger.info("Loading question-answering pipeline...")
-    app.state.qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
-    logger.info("Question-answering pipeline loaded successfully.")
+    # logger.info("Loading question-answering pipeline...")
+    # app.state.qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
+    # logger.info("Question-answering pipeline loaded successfully.")
 
     yield  # Application runs during this time
 
